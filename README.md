@@ -93,7 +93,6 @@ To align with enterprise security standards, I enforced a strong password policy
 - Password complexity: Enabled  
 - Maximum password age: 90 days  
 
-```
 
 ---
 
