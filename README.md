@@ -28,7 +28,7 @@ Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 Install-ADDSForest -DomainName "corp.local" -DomainNetbiosName "CORP" `
   -SafeModeAdministratorPassword (ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force)
 ```
-![ADUC New Domain - corp.local](Screenshots/ADUC%20new%20domain%20corplocal.png)
+![ADUC New Domain](Screenshots/ADUC_new_domain_corplocal.png)
 
 
 ---
@@ -64,6 +64,17 @@ Add-ADGroupMember -Identity "HR" -Members "gtodd"
 Add-ADGroupMember -Identity "IT" -Members "jrice","adminuser"
 
 ```
+<p align="center">
+  <img src="Screenshots/ADUC_New_users1_OU.png" width="500"/>
+  <img src="Screenshots/Verify_memberships_ps.png" width="500"/>
+</p>
+
+<p align="center">
+  <strong>ADUC - New Users in OU</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <strong>Verify Memberships via PowerShell</strong>
+</p>
+
+
 
 ---
 
@@ -82,7 +93,15 @@ Guest False   Built-in account for guest access to the computer/domain
 
 Set-GPRegistryValue -Name "Security Policy - Users1" -Key "HKLM\Software\Policies\Microsoft\Windows\RemovableStorageDevices" -ValueName "Deny_All" -Type DWord -Value 1
 ```
+<p align="center">
+  <img src="Screenshots/disable_guest_account.png" width="500"/>
+  <img src="Screenshots/removable_devices.png" width="500"/>
+</p>
 
+<p align="center">
+  <strong>Guest Account Disabled</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <strong>Removable Devices Restricted</strong>
+</p>
 ---
 
 ## 🔑 Password Policy Hardening
@@ -94,7 +113,7 @@ To align with enterprise security standards, I enforced a strong password policy
 - Minimum password length: 8 characters  
 - Password complexity: Enabled  
 - Maximum password age: 90 days  
-
+![Password Policy GPO Settings](Screenshots/password_policy.png)
 
 ---
 
