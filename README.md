@@ -28,7 +28,7 @@ Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 Install-ADDSForest -DomainName "corp.local" -DomainNetbiosName "CORP" `
   -SafeModeAdministratorPassword (ConvertTo-SecureString "P@ssw0rd!" -AsPlainText -Force)
 ```
-
+![Server Manager showing new domain](Screenshots/ ADUC new domain corplocal.png)
 ---
 
 ## 🗂️ Structuring the Directory
